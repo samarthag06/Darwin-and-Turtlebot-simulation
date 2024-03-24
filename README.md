@@ -135,6 +135,15 @@ To run the Darwin robot and the coordinate node, follow these steps:
      source devel/setup.bash
      rosrun APF_simulation mynode_08
      ```
+
+ 11. **Run apf_simulation Node**: In another terminal, run the mynode_11.cpp script to to move the turtlebot to a goal position (10,10) avoiding obstacles.
+
+     ```bash
+     cd ~/catkin_ws/src
+     source devel/setup.bash
+     rosrun apf_sim mynode_11
+     ```
+
  ## Contributors
 
 - [Samarth Agarwal](https://github.com/samarthag06)
