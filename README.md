@@ -141,7 +141,7 @@ To run the Darwin robot and the coordinate node, follow these steps:
      ```bash
      cd ~/catkin_ws/src
      source devel/setup.bash
-     rosrun apf_sim mynode_11
+     rosrun APF_simulation mynode_11
      ```
 
  ## Contributors
