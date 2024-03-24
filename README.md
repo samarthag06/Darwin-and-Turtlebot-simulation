@@ -104,12 +104,21 @@ To run the Darwin robot and the coordinate node, follow these steps:
     ```bash
     source devel/setup.bash
 
-6. **Set Executable Permissions**: Navigate to the apf_sim package folder and then to the CMakeLists.txt file to set executable permissions for the required cpp scripts. Add the following lines:
-```bash
-add_executable(mynode_11 src/scripts/mynode_11.cpp)
-target_link_libraries(mynode_11 ${catkin_LIBRARIES})
-```
+6. **Set Executable Permissions**: Navigate to the APF_simulation package folder and then to the CMakeLists.txt file to set executable permissions for the required cpp      scripts. Add the following lines:
+   
+    ```bash
+    add_executable(mynode_11 src/scripts/mynode_03.cpp)
+    target_link_libraries(mynode_03 ${catkin_LIBRARIES})
 
+    add_executable(mynode_11 src/scripts/mynode_08.cpp)
+    target_link_libraries(mynode_08 ${catkin_LIBRARIES})
+
+    add_executable(mynode_11 src/scripts/mynode_11.cpp)
+    target_link_libraries(mynode_11 ${catkin_LIBRARIES})
+    ```
+ 7. **Launch Gazebo Simulation**: Launch the Gazebo simulation environment for the Turtlebot3 robot from a separate terminal and sourcing the bash file .
+
+ 8. **Obstacle Setup**: set up random obstacles in gazebo simulation using the available objects.
 ## Contributors
 
 - [Samarth Agarwal](https://github.com/samarthag06)
