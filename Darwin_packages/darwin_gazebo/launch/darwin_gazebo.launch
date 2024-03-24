@@ -1,0 +1,46 @@
+<launch>
+
+   <param name="robot_description" textfile="$(find darwin_description)/urdf/darwin.urdf" />  
+
+
+<arg name="world_file" default = "$(find cobot_simulation)/worlds/empty.world" />
+
+
+
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name ="world_name" value ="$(arg world_file)"/>
+    <arg name="paused" value="true"/>
+    
+  </include>
+  
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-file $(find darwin_description)/urdf/darwin.urdf -urdf -model darwin -z 0.3417" />
+
+
+
+
+  <include file="$(find darwin_control)/launch/darwin_control.launch"/>
+
+<node name="darwin_walker" pkg="darwin_gazebo" type="walker.py" /> 
+
+ <node pkg="lsd_slam_core" type="lsd_slam_node" name="lsd_slam_node">
+    <param name="calib" type="string" value="/path/to/your/calib.cfg"/>
+    <param name="publish_images" type="bool" value="true"/>
+    <!-- Add other parameters as needed -->
+  </node>
+
+<node name="rviz" pkg="rviz" type="rviz"/>
+
+<arg name="use_gui" default ="true"/>
+<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"  output="screen" unless ="$(arg use_gui)"/>
+    
+<node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui"  output="screen" if="$(arg use_gui)" />
+    
+    
+<node name="rqt_reconfigure" pkg="rqt_gui" type="rqt_gui"/>
+
+ <remap from="/darwin/camera/image_raw" to="/camera/image_raw" />
+ <remap from="/darwin/camera/camera_info" to="/camera/camera_info" />
+
+
+</launch>

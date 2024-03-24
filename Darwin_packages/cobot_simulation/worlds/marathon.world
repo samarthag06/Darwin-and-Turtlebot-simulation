@@ -1,0 +1,333 @@
+<sdf version='1.7'>
+  <world name='default'>
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+    <model name='ground_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <contact>
+              <collide_bitmask>65535</collide_bitmask>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+    <wind/>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <state world_name='default'>
+      <sim_time>0 0</sim_time>
+      <real_time>0 0</real_time>
+      <wall_time>1704046643 330150272</wall_time>
+      <iterations>0</iterations>
+      <model name='Untitled_0'>
+        <pose>0.024192 0.023073 0 0 0 -1.57</pose>
+        <scale>1 1 1</scale>
+        <model name='marathon_path'>
+          <pose>0.024192 0.023073 0 0 0 -1.57</pose>
+          <scale>1 1 1</scale>
+          <link name='marathon_path'>
+            <pose>0.024192 0.023073 0 0 0 -1.57</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+        </model>
+      </model>
+      <model name='Untitled_1'>
+        <pose>2.77383 -3.02668 0 0 -0 2.21386</pose>
+        <scale>1 1 1</scale>
+        <model name='square_forward'>
+          <pose>2.77383 -3.02668 0 0 -0 2.21386</pose>
+          <scale>1 1 1</scale>
+          <link name='square_forward'>
+            <pose>2.77383 -3.02668 0 0 -0 2.21386</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+        </model>
+      </model>
+      <model name='Untitled_2'>
+        <pose>3.48932 -2.37676 0 0 0 -0.939074</pose>
+        <scale>1 1 1</scale>
+        <model name='square_left'>
+          <pose>3.48932 -2.37676 0 0 0 -0.939074</pose>
+          <scale>1 1 1</scale>
+          <link name='square_left'>
+            <pose>3.48932 -2.37676 0 0 0 -0.939074</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+        </model>
+      </model>
+      <model name='Untitled_3'>
+        <pose>2.78114 -1.5492 0 0 -0 0.6177</pose>
+        <scale>1 1 1</scale>
+        <model name='square_left'>
+          <pose>2.78114 -1.5492 0 0 -0 0.6177</pose>
+          <scale>1 1 1</scale>
+          <link name='square_left'>
+            <pose>2.78114 -1.5492 0 0 -0 0.6177</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+        </model>
+      </model>
+      <model name='Untitled_4'>
+        <pose>1.87397 -2.20729 0 0 0 -0.942726</pose>
+        <scale>1 1 1</scale>
+        <model name='square_forward'>
+          <pose>1.87396 -2.20729 0 0 0 -0.942726</pose>
+          <scale>1 1 1</scale>
+          <link name='square_forward'>
+            <pose>1.87396 -2.20729 0 0 0 -0.942726</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+        </model>
+      </model>
+      <model name='Untitled_5'>
+        <pose>0.677827 -3.05189 0 0 0 -0.956315</pose>
+        <scale>1 1 1</scale>
+        <model name='square_right'>
+          <pose>0.677826 -3.05189 0 0 0 -0.956315</pose>
+          <scale>1 1 1</scale>
+          <link name='square_right'>
+            <pose>0.677826 -3.05189 0 0 0 -0.956315</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+        </model>
+      </model>
+      <model name='ground_plane'>
+        <pose>0 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>0 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <light name='sun'>
+        <pose>0 0 10 0 -0 0</pose>
+      </light>
+    </state>
+    <model name='Untitled_0'>
+      <model name='marathon_path'>
+        <static>1</static>
+        <link name='marathon_path'>
+          <visual name='visual'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://marathon_path/meshes/marathon_path.dae</uri>
+              </mesh>
+            </geometry>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <pose>0 0 0 0 -0 0</pose>
+      </model>
+      <static>0</static>
+      <allow_auto_disable>1</allow_auto_disable>
+      <pose>0.429018 -0.213591 0 0 -0 0</pose>
+    </model>
+    <model name='Untitled_1'>
+      <model name='square_forward'>
+        <static>1</static>
+        <link name='square_forward'>
+          <visual name='visual'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://square_forward/meshes/square_forward.dae</uri>
+              </mesh>
+            </geometry>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <pose>1e-06 -2e-06 0 0 -0 0</pose>
+      </model>
+      <static>0</static>
+      <allow_auto_disable>1</allow_auto_disable>
+      <pose>2.75241 -2.92744 0 0 -0 0</pose>
+    </model>
+    <model name='Untitled_2'>
+      <model name='square_left'>
+        <static>1</static>
+        <link name='square_left'>
+          <visual name='visual'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://square_left/meshes/square_left.dae</uri>
+              </mesh>
+            </geometry>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <pose>-1e-06 3e-06 0 0 -0 0</pose>
+      </model>
+      <static>0</static>
+      <allow_auto_disable>1</allow_auto_disable>
+      <pose>3.22538 -2.52218 0 0 -0 0</pose>
+    </model>
+    <model name='Untitled_3'>
+      <model name='square_left'>
+        <static>1</static>
+        <link name='square_left'>
+          <visual name='visual'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://square_left/meshes/square_left.dae</uri>
+              </mesh>
+            </geometry>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <pose>4e-06 -2e-06 0 0 -0 0</pose>
+      </model>
+      <static>0</static>
+      <allow_auto_disable>1</allow_auto_disable>
+      <pose>2.95827 -1.81302 0 0 -0 0</pose>
+    </model>
+    <model name='Untitled_4'>
+      <model name='square_forward'>
+        <static>1</static>
+        <link name='square_forward'>
+          <visual name='visual'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://square_forward/meshes/square_forward.dae</uri>
+              </mesh>
+            </geometry>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <pose>1e-06 -3e-06 0 0 -0 0</pose>
+      </model>
+      <static>0</static>
+      <allow_auto_disable>1</allow_auto_disable>
+      <pose>2.05029 -2.14646 0 0 -0 0</pose>
+    </model>
+    <model name='Untitled_5'>
+      <model name='square_right'>
+        <static>1</static>
+        <link name='square_right'>
+          <visual name='visual'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://square_right/meshes/square_right.dae</uri>
+              </mesh>
+            </geometry>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <pose>-0 -1e-06 0 0 -0 0</pose>
+      </model>
+      <static>0</static>
+      <allow_auto_disable>1</allow_auto_disable>
+      <pose>0.958937 -2.90756 0 0 -0 0</pose>
+    </model>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>-5.66832 -7.98048 8.34692 0 0.637798 0.616</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+  </world>
+</sdf>

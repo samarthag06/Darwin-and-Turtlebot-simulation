@@ -1,0 +1,4 @@
+<launch>
+
+    <node name="odom_pub" pkg="darwin_gazebo" type="odom.py" output="screen" />
+</launch>
