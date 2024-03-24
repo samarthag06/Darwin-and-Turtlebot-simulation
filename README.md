@@ -118,8 +118,24 @@ To run the Darwin robot and the coordinate node, follow these steps:
     ```
  7. **Launch Gazebo Simulation**: Launch the Gazebo simulation environment for the Turtlebot3 robot from a separate terminal and sourcing the bash file .
 
- 8. **Obstacle Setup**: set up random obstacles in gazebo simulation using the available objects.
-## Contributors
+ 8. **Obstacle Setup**: set up random obstacles in gazebo simulation using the available object
+
+ 9. **Run min.distance obstacle array Node**: In another terminal, run the mynode_03.cpp script to finds min. distance obstacle array from live turtlebot3 lidar data.
+  
+    ```bash
+    cd ~/catkin_ws/src
+    source devel/setup.bash
+    rosrun APF_simulation mynode_03
+    ```
+    
+ 10. **Run specified coordinate and angle turn Node**: In another terminal, run the mynode_08.cpp script to to move the turtlebot to a specified coordinate at specific        angle.
+
+     ```bash
+     cd ~/catkin_ws/src
+     source devel/setup.bash
+     rosrun APF_simulation mynode_08
+     ```
+ ## Contributors
 
 - [Samarth Agarwal](https://github.com/samarthag06)
 
